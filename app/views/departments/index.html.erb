@@ -2,5 +2,8 @@
 <div id="departments-<%= department.id%>">
  <p> Department Name: <%= department.name %>
   Located on the <%= department.floor %> floor</p>
+  Employees: <% department.employees.each do |employee|%> 
+                    <%= employee.name %>,
+                    <% end %>
 </div>
   <% end %>

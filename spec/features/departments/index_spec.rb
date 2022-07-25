@@ -43,7 +43,17 @@ RSpec.describe 'index#page' do
 
       visit "/departments"
 
-      
+      within "#departments-#{scotts_dept.id}" do
+        expect(page).to have_content("Department Name: Scott's Depeartment")
+        expect(page).to have_content("Located on the 5th floor")
+        expect(page).to have_content("Employees: Marry, Gina") 
+      end
+
+      within "#departments-#{jims_dept.id}" do
+        expect(page).to have_content("Department Name: Jim's Depeartment")
+        expect(page).to have_content("Located on the 32nd floor") 
+        expect(page).to have_content("Employees: Dante, Deshaun")
+      end
     end
   end
 end
