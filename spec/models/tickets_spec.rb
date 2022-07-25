@@ -6,4 +6,9 @@ RSpec.describe Ticket, type: :model do
         it { should have_many(:employees).through (:employee_tickets) }
     end
 
+    describe 'valdations' do
+        it { should validate_presence_of :subject}
+        it { should validate_presence_of :age}
+    end
+
 end
