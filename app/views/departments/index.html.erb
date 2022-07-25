@@ -1,0 +1,6 @@
+<% @departments.each do |department|%>
+<div id="departments-<%= department.id%>">
+ <p> Department Name: <%= department.name %>
+  Located on the <%= department.floor %> floor</p>
+</div>
+  <% end %>
